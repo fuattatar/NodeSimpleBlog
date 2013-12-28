@@ -1,0 +1,12 @@
+/*Login page css file */
+/*Author: Fuat Tatar */
+
+.error {
+	font-weight: bold;
+	color: red;
+	margin:5% 0 0 0 ;
+}
+.row {
+	margin-top:5%;
+}
+

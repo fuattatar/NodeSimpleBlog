@@ -1,0 +1,34 @@
+extends ../../../views/management/managementlayout
+block content
+	.row
+		.col-md-12
+			ol.breadcrumb
+				li
+					a(href="/Management/FriendlySite/Index") Dost Siteler
+
+			table.table
+				tr
+					td
+						b İsim
+					td 
+						b Açıklama
+					td
+						b Site Adresi
+					td
+						b Follow
+					td
+						b Oluşturulma Tarihi
+					td 
+					td
+				-friendlysites.forEach(function(site) {
+				tr
+					td #{site.name}
+					td #{site.description}
+					td #{site.url}
+					td #{site.followtype}
+					td #{moment(site.createddate).format("DD-MM-YYYY")}
+					td 
+						a(href="/Management/FriendlySite/Edit/"+site._id) Düzenle
+					td
+						a(href="/Management/FriendlySite/Delete/"+site._id) Sil
+				-})

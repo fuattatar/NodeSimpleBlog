@@ -1,0 +1,50 @@
+extends ../../../views/management/managementlayout
+block js
+	script(type='text/javascript')
+		$(function() {
+			
+		});
+		function Confirme(commentid,status){
+				$.ajax({
+					url: '/Management/Comment/Confirm/',
+					type: "POST",
+					data: {"id": commentid,"status": status},
+					success: function(data){window.location.href="/Management/Comment/Index";}
+				})
+			}
+block content
+	.row
+		.col-md-12
+			ol.breadcrumb
+				li
+					a(href="/Management/Post/Index") Yorumlar
+
+			table.table
+				tr
+					td 
+						b E-posta
+					td
+						b Website
+					td
+						b İçerik
+					td
+						b Post ID
+					td
+						b Durum
+					td 
+					td 
+				-comments.forEach(function(comment) {
+				tr
+					td #{comment.email}
+					td #{comment.website}
+					td #{comment.content}
+					td #{comment.postid}
+					-if(comment.status=="0")
+						td 
+							input.btn.btn-primary.btn-sm(type="button",value="Onayla",onclick="Confirme('#{comment._id}',#{comment.status});")
+					-else
+						td 
+							input.btn.btn-danger.btn-sm(type="button",value="Yasakla",onclick="Confirme('#{comment._id}',#{comment.status});")
+					td
+						a(href="/Management/Comment/Delete/"+comment._id) Sil
+				-})

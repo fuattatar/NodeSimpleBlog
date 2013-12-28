@@ -1,0 +1,54 @@
+nav.navbar.navbar-default(role="navigation")
+	.navbar-header
+		a.navbar-brand(href="/Management") Yönetim Paneli
+	.navbar-collapse.collapse
+		ul.nav.navbar-nav
+			li.dropdown
+				a.dropdown-toggle(href="/Management/Post/Index",data-toggle="dropdown") Gönderiler
+					b.caret
+				ul.dropdown-menu
+					li
+						a(href="/Management/Post/New") Yeni
+						a(href="/Management/Post/Index") Liste
+			li.dropdown
+				a.dropdown-toggle(href="#",data-toggle="dropdown") Yorumlar
+					b.caret
+				ul.dropdown-menu
+					li
+						a(href="/Management/Comment/Index") Liste
+			li.dropdown
+				a.dropdown-toggle(href="#",data-toggle="dropdown") Kategoriler
+					b.caret
+				ul.dropdown-menu
+					li
+						a(href="/Management/Category/New") Yeni
+						a(href="/Management/Category/Index") Liste
+			li.dropdown
+				a.dropdown-toggle(href="#",data-toggle="dropdown") Dost Siteler
+					b.caret
+				ul.dropdown-menu
+					li
+						a(href="/Management/FriendlySite/New") Yeni
+						a(href="/Management/FriendlySite/Index") Liste
+			li.dropdown
+				a.dropdown-toggle(href="#",data-toggle="dropdown") İstatistikler
+					b.caret
+				ul.dropdown-menu
+					li
+						a(href="#") Kullanıcı İstatistikleri
+						a(href="#") Site İstatistikleri
+						a(href="#") Analitik İstatistikleri
+			li.dropdown
+				a.dropdown-toggle(href="#",data-toggle="dropdown") Ayarlar
+					b.caret
+				ul.dropdown-menu
+					li
+						a(href="#") Site Ayarları
+						a(href="#") Google Ayarları
+						a(href="#") Gönderi Ayarları
+						a(href="#") Yorum Ayarları
+						a(href="#") Tag Ayarları
+						a(href="#") Seo Ayarları
+		ul.nav.navbar-nav.navbar-right
+			li
+				a(href="/Management/Exit") Çıkış

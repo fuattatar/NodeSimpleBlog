@@ -1,0 +1,43 @@
+extends ../../../views/management/managementlayout
+block js
+	link(rel='stylesheet', href='/stylesheets/jquery-te-1.4.0.css')
+
+block content
+	.row
+		.col-md-8
+			ol.breadcrumb
+				li
+					a(href="/Management/FriendlySite/Index") Dost Siteler >
+					a(href="#")  Dost Site Oluştur
+			form(role='form',action='/Management/FriendlySite/New', method='post')	
+				table.table
+					tr
+						td Site Adı:
+						td
+							input.form-control(type="text",name='friendlysite[name]')
+					tr
+						td Site Açıklaması:
+						td
+							textarea.form-control(name="friendlysite[description]")
+					tr
+						td Site Adresi:
+						td
+							input.form-control(type="text",name='friendlysite[url]')
+
+					tr
+						td DoFollow:
+						td
+							.checkbox
+								label
+									input(type="checkbox",name="friendlysite[follow]")
+
+					tr
+						td
+						td
+							input.btn.btn-primary.btn-block(type="submit",value="Ekle")
+			-if(error && error[0]=='success')
+				.alert.alert-success
+					p.error= error[1]
+			else if(error && error[0]=='warning')
+				.alert.alert-warning
+					p.error= error[1]

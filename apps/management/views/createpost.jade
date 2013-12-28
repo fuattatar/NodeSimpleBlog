@@ -1,0 +1,42 @@
+extends ../../../views/management/managementlayout
+block js
+	link(rel='stylesheet', href='/stylesheets/jquery-te-1.4.0.css')
+	script(type='text/javascript', src='/javascripts/jquery-te-1.4.0.min.js')
+block content
+	.row
+		.col-md-8
+			ol.breadcrumb
+				li
+					a(href="/Management/Post/Index") Gönderiler >
+					a(href="#")  Gönderi Oluştur
+			form(role='form',action='/Management/Post/New', method='post')	
+				table.table
+					tr
+						td Başlık:
+						td
+							input.form-control(type="text",name='post[title]')
+					tr
+						td İçerik:
+						td
+							textarea.form-control(name='post[body]',placeholder="Yazı giriniz" autofocus)
+					tr						
+						td Anahtar Kelimeler:
+						td
+							input.form-control(type="text",name='post[keywords]')
+					tr						
+						td Kategori
+						td
+							select.form-control(name='post[categories]' multiple)
+								-categories.forEach(function(category) {
+									option(value="#{category._id}") #{category.name}
+								-})
+					tr
+						td
+						td
+							input.btn.btn-primary.btn-block(type="submit",value="Ekle")
+			-if(error && error[0]=='success')
+				.alert.alert-success
+					p.error= error[1]
+			else if(error && error[0]=='warning')
+				.alert.alert-warning
+					p.error= error[1]

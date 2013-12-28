@@ -1,0 +1,25 @@
+!!!
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/#{stylesheet}.css')
+		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+	body
+		.container
+			.row
+				.col-md-4
+				.col-md-4
+					.well
+						form(role='form',action='sessions', method='post')
+							.form-group
+								label(for='Email') Eposta Adresi
+								input#Email.form-control(type='email',name='login[email]',placeholder='E-posta adresi')
+							.form-group
+								label(for='Password') Şifre
+								input#Password.form-control(type='password',name='login[password]', placeholder='Şifre')
+							button.btn.btn-default(type='submit') Giriş
+							- if (error)
+								p.error= error
+
+		script(type='text/javascript', src='/javascripts/jquery-1.10.2.min.js')
+		script(type='text/javascript', src='/javascripts/bootstrap.min.js')

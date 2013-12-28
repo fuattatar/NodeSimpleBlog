@@ -1,0 +1,16 @@
+{
+  "name": "NodejsBlog",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "3.4.5",
+    "jade": "*",
+    "nodemon": "~0.7.10",
+    "mongoose": "~3.8.1",
+    "nodemailer": "~0.5.14",
+    "moment": "~2.4.0"
+  }
+}

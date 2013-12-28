@@ -1,0 +1,22 @@
+extends ../../../views/management/managementlayout
+block content
+	.row
+		.col-md-12
+			ol.breadcrumb
+				li
+					a(href="/Management/Category/Index") Kategoriler
+
+			table.table
+				tr
+					td.col-sm-10
+						b İsim
+					td 
+					td 
+				-categories.forEach(function(category) {
+				tr
+					td #{category.name}
+					td 
+						a(href="/Management/Category/Edit/"+category._id) Düzenle
+					td
+						a(href="/Management/Category/Delete/"+category._id) Sil
+				-})

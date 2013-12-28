@@ -1,0 +1,15 @@
+extends ../../../views/bloglayout
+block content
+	.row
+		.col-md-12
+			-posts.forEach(function(post) {
+			.posts
+				a(href="/Post/"+urlify(post.title))
+					h3= post.title
+				p!{post.body.substring(0,500)}
+				p
+					b
+						u 
+							a(href="/Post/"+urlify(post.title)) Devamı için tıklayınız...
+			-})
+		

@@ -1,0 +1,28 @@
+extends ../../../views/management/managementlayout
+block content
+	.row
+		.col-md-12
+			ol.breadcrumb
+				li
+					a(href="/Management/Post/Index") Gönderiler
+
+			table.table
+				tr
+					td 
+						b Başlık
+					td
+						b İçerik
+					td
+						b Anahtar Kelimeler
+					td 
+					td 
+				-posts.forEach(function(post) {
+				tr
+					td #{post.title}
+					td #{post.body.substring(0,1000)}
+					td #{post.keywords}
+					td 
+						a(href="/Management/Post/Edit/"+post._id) Düzenle
+					td
+						a(href="/Management/Post/Delete/"+post._id) Sil
+				-})
