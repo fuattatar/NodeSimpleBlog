@@ -60,14 +60,14 @@ var routes= function (app) {
 	})
 	app.get('/',function(req, res){
 		
-		Post.find({}).sort({createddate: -1}).exec(function(err, docs){
+		Post.find({}).sort({_id: -1}).exec(function(err, docs){
 			if(! docs.length) {
 				console.log('Gönderi bulunamadı');
 			}
 			console.log(docs);
 				
-			Category.find({}).sort({createddate: -1}).exec(function(err, categories){
-				FriendlySite.find({}).sort({createddate:-1}).exec(function(err,sites){
+			Category.find({}).sort({_id: -1}).exec(function(err, categories){
+				FriendlySite.find({}).sort({_id:-1}).exec(function(err,sites){
 					return res.render(__dirname+"/views/index",{
 						title: 'Fuat Tatar Software Developer',
 						stylesheet: 'blog',
