@@ -38,5 +38,5 @@ block content
 						p.pull-right #{moment(comment.createddate).format("DD-MM-YYYY")}
 						p
 							b=comment.content
-						p=comment.email
+						p=comment.email.split("@",1)
 					-})
