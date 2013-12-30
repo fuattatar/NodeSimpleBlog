@@ -13,6 +13,8 @@ var routes = function (app) {
         nonPrintable: "-",
         trim: true
     });
+    var PageRank = require('pagerank');
+    var pjson = require('../../package.json');
 
     
     
@@ -241,6 +243,20 @@ var routes = function (app) {
             });
         });
     });
+
+    app.get('/Management/PageRank', function (req, res) {
+        new PageRank(pjson.sitename, function(error, pageRank) {
+            console.log(error, pageRank);
+            console.log(pjson.sitename);
+            return res.render(__dirname + "/views/PageRank", {
+                title: 'Page Rank',
+                stylesheet: 'pagerank',
+                pagerank: pageRank
+            });
+        });
+    });
+
+
 
     /*POST*/
     app.post('/Management/Post/New', function (req, res) {
