@@ -1,7 +1,9 @@
 extends ../../../views/management/managementlayout
 block js
-	link(rel='stylesheet', href='/stylesheets/jquery-te-1.4.0.css')
-	script(type='text/javascript', src='/javascripts/jquery-te-1.4.0.min.js')
+	script(type='text/javascript')
+		tinymce.init({
+			selector: "textarea"
+		});
 block content
 	.row
 		.col-md-8
