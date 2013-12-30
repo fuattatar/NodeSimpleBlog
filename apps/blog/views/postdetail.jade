@@ -1,5 +1,6 @@
 extends ../../../views/bloglayout
 block js
+	script(type='text/javascript', src='/javascripts/jquery.noty.packaged.min.js')
 	script(type='text/javascript')
 			$("#commentform" ).submit(function( event ) {
 			//$( ".well" ).last().after("<div class='well'><p><b>"+$("#content").val()+"</b></p><p>"+$("#email").val()+"</p></div>");
@@ -13,7 +14,21 @@ block js
 				}); 
 				event.preventDefault();
 			});
-		
+			
+			$(function() {
+				setTimeout(Notify, 500);	
+			});
+			
+			function Notify () {
+				var n = noty({
+					text: 'noty - a jquery notification library!',
+					layout: 'bottomRight',
+					type: 'information',
+					text: 'İlginizi çekebilir',
+					template: '<span id="notifyspan"><a href="/Post/#{singlepost.seotitle}"><div class="noty_message"><span class="noty_text"></span><br/><span id="notifytitle">#{singlepost.title}</span><div class="noty_close"></div></div></a></span>'
+					});
+			}
+
 
 block content
 	.row

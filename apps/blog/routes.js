@@ -141,16 +141,19 @@ var routes= function (app) {
 				}
 					PostCategory.find({postid:post._id},function(err, postcategories){
 						if(err) return next(err);
-						
-						return res.render(__dirname+"/views/postdetail",{
-							title: post.title,
-							stylesheet: 'postdetail',
-							post:post,
-							keywords:post.keywords,
-							comments:comments,
-							postcategories:postcategories,
-							moment:moment,
-							description:post.title
+						Post.find({seotitle:{$ne:req.params.title}},function(err,singlepost){
+							
+							return res.render(__dirname+"/views/postdetail",{
+								title: post.title,
+								stylesheet: 'postdetail',
+								post:post,
+								keywords:post.keywords,
+								comments:comments,
+								postcategories:postcategories,
+								moment:moment,
+								description:post.title,
+								singlepost:singlepost[Math.floor((Math.random()*singlepost.length))]
+							});
 						});
 					});
 				});
