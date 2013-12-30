@@ -6,6 +6,6 @@
 .alert-info{
 	margin-top:3%;
 }
-#notifyspan a:hover{
-color:red;
+#notifyspan a:hover, a{
+color:white;
 }
