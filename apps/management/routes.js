@@ -195,7 +195,7 @@ var routes = function (app) {
     });
 
     app.get('/Management/FriendlySite/Index', function(req, res){
-        FriendlySite.find({}).sort({createddate: -1}).exec(function(err, docs){
+        FriendlySite.find({}).sort({_id: -1}).exec(function(err, docs){
              if (!docs.length) {
                 console.log('DostSiteBulunamadı');
             }
