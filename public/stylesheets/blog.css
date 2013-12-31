@@ -15,7 +15,11 @@ ul:before{
 .well,li{
 	background-color: #046380;
 	color:white;
+	
 }
 .well p{
+	color:white !important;
+}
+ul li a{
 	color:white !important;
 }
