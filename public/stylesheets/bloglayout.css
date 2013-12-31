@@ -26,3 +26,26 @@ body {
 #footertext{
   color:#EFECCA;
 }
+
+.navbar-custom {
+    background-color:#046380;
+    color:#EFECCA;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#E6E2AF;
+    
+}
+
+.navbar-custom .navbar-nav > li > a:hover {
+    color:#E6E2AF;
+    background-color: #002F2F;
+}
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: red;
+    background-color:red;
+}
+.navbar-custom .navbar-brand {
+    color:#EFECCA;
+}
