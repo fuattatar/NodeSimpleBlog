@@ -68,15 +68,18 @@ var routes= function (app) {
 				
 			Category.find({}).sort({_id: -1}).exec(function(err, categories){
 				FriendlySite.find({}).sort({_id:-1}).exec(function(err,sites){
-					return res.render(__dirname+"/views/index",{
-						title: 'Fuat Tatar Software Developer',
-						stylesheet: 'blog',
-						posts:docs,
-						urlify:urlify,
-						categories:categories,
-						description:'Hobisi ve mesleği Yazılım olan Software Developer',
-						sites:sites
-					});	
+					Comment.find({}).sort({_id:-1}).exec(function(err,comments){
+						return res.render(__dirname+"/views/index",{
+							title: 'Fuat Tatar Software Developer',
+							stylesheet: 'blog',
+							posts:docs,
+							urlify:urlify,
+							categories:categories,
+							description:'Hobisi ve mesleği Yazılım olan Software Developer',
+							sites:sites,
+							comments:comments
+						});
+					});
 				});
 			});
 		});		

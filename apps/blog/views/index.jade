@@ -24,6 +24,16 @@ block content
 						-})
 			.row
 				.well
+					ul(aria-label="Son Yorumlar")
+						-comments.forEach(function(comment){
+							li
+								p#commentemail #{comment.email.split("@",1)}
+								p#commentcontent #{comment.content}
+
+
+						-})
+			.row
+				.well
 					ul(aria-label="Dost Siteler")
 						-sites.forEach(function(site){
 							li

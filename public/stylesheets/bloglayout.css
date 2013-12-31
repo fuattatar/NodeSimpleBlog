@@ -1,5 +1,5 @@
 body{
-	background-color: #ECF0F1;
+	background-color: #EFECCA;
 }
 html,
 body {
@@ -21,5 +21,8 @@ body {
 #footer {
   height: 35px;
   padding: 5px;
-  background-color: #3b5999;
+  background-color: #046380;
+}
+#footertext{
+  color:#EFECCA;
 }

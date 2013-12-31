@@ -4,3 +4,10 @@ ul:before{
     font-weight:bold;
     margin-left:-15px;
 }
+#commentemail{
+	color:#046380;
+	font-weight: bold;
+}
+#commentcontent{
+	color:#002F2F;
+}
