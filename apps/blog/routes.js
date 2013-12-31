@@ -164,8 +164,9 @@ var routes= function (app) {
 	});
 
 	app.post('/Post/Comment',function(req, res){
+		 console.log(req.session.email);
 		 new Comment({
-        email:req.body.comment.email,
+        email:req.session.email=='fuat.tatar@hotmail.com'?'admin':req.body.comment.email,
         website:req.body.comment.website,
         content:req.body.comment.content,
         postid:req.body.comment.postid,

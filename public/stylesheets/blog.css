@@ -11,3 +11,11 @@ ul:before{
 #commentcontent{
 	color:#002F2F;
 }
+
+.well,li{
+	background-color: #046380;
+	color:white;
+}
+.well p{
+	color:white !important;
+}

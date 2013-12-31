@@ -9,3 +9,9 @@
 #notifyspan a:hover, a{
 color:white;
 }
+
+.well-admin{
+	background-color: #002F2F;
+	color:white;
+	padding: 0 0 0 3px;
+}

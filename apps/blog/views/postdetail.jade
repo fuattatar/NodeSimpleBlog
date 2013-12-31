@@ -49,9 +49,18 @@ block content
 								textarea#content.form-control(name='comment[content]', placeholder='Yorum')
 							button#btnAdd.btn.btn-default(type='submit') Ekle
 					-comments.forEach(function(comment) {
-					.well
-						p.pull-right #{moment(comment.createddate).format("DD-MM-YYYY")}
-						p
-							b=comment.content
-						p=comment.email.split("@",1)
+						-if(comment.email=='admin'){
+							.well-admin
+								p.pull-right #{moment(comment.createddate).format("DD-MM-YYYY")}
+								p
+									b=comment.content
+								p=comment.email.split("@",1)
+						-}
+						-else{
+							.well
+								p.pull-right #{moment(comment.createddate).format("DD-MM-YYYY")}
+								p
+									b=comment.content
+								p=comment.email.split("@",1)
+						-}
 					-})
