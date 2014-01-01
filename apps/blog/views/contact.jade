@@ -7,7 +7,6 @@ block content
 					.control-group
 						.controls
 							input.form-control(type="text",name="name",placeholder="İsim",data-validation-required-message="Lütfen isminizi giriniz.")
-								p.help-block
 					.control-group
 						.controls
 							input.form-control(type="email",name="email",placeholder="E-posta",data-validation-required-message="Lütfen eposta adresinizi giriniz.")					
@@ -16,4 +15,4 @@ block content
 							textarea.form-control(name="text",rows="10",cols="100",placeholder="Mesaj",data-validation-required-message="Lütfen mesajınızı giriniz",minlength="5",data-validation-minlength-message="Minimum 5 karakter girmelisiniz",maxlength="999",style="resize:none;")
 					-if(error)
 						.alert.alert-success=error
-					button.btn.btn-primary.pull-right.btn-block(type="submit") GÖNDER
+					button.btn.btn-primary.pull-right.btn-block(type='submit') GÖNDER

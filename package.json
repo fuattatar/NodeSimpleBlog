@@ -1,6 +1,6 @@
 {
   "name": "NodejsBlog",
-  "sitename":"http://www.fuattatar.com",
+  "sitename": "http://www.fuattatar.com",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -12,6 +12,8 @@
     "nodemon": "~0.7.10",
     "mongoose": "~3.8.1",
     "nodemailer": "~0.5.14",
-    "moment": "~2.4.0"
+    "moment": "~2.4.0",
+    "urlify": "~0.3.5",
+    "pagerank": "~1.2.0"
   }
 }
