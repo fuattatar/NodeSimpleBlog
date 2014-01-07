@@ -31,36 +31,46 @@ block js
 
 
 block content
-	.row
-		.col-md-12
-			.posts
-				h3= post.title
-				p!{post.body}
-			.row
-				.col-md-5
-					h5 Yorum Yap
-					form#commentform(role='form',action='/Post/Comment', method='post')
-							input(type='hidden',name='comment[postid]',value=post._id)
-							.form-group
-								input#email.form-control(type='email',name='comment[email]',placeholder='E-posta adresi')
-							.form-group
-								input.form-control(type='text',name='comment[website]', placeholder='Website')
-							.form-group
-								textarea#content.form-control(name='comment[content]', placeholder='Yorum')
-							button#btnAdd.btn.btn-default(type='submit') Ekle
-					-comments.forEach(function(comment) {
-						-if(comment.email=='admin'){
-							.well-admin
-								p.pull-right #{moment(comment.createddate).format("DD-MM-YYYY")}
-								p
-									b=comment.content
-								p=comment.email.split("@",1)
-						-}
-						-else{
-							.well
-								p.pull-right #{moment(comment.createddate).format("DD-MM-YYYY")}
-								p
-									b=comment.content
-								p=comment.email.split("@",1)
-						-}
-					-})
+	.container
+		.row
+			.col-md-12
+				.posts
+					h3= post.title
+					span(itemprop="articleBody")
+						p!{post.body}
+					p 
+						i Yayınyanma Tarihi: 
+							span(itemprop="datePublished" content='#{moment(post.createddate).format("DD-MM-YYYY")}') #{moment(post.createddate).format("DD-MM-YYYY")}
+					p
+						
+						span(itemprop="author",itemscope itemtype="http://schema.org/Person")
+							span(itemprop="name")
+								i Yazan:fuat.tatar
+				.row
+					.col-md-5
+						h5 Yorum Yap
+						form#commentform(role='form',action='/Post/Comment', method='post')
+								input(type='hidden',name='comment[postid]',value=post._id)
+								.form-group
+									input#email.form-control(type='email',name='comment[email]',placeholder='E-posta adresi')
+								.form-group
+									input.form-control(type='text',name='comment[website]', placeholder='Website')
+								.form-group
+									textarea#content.form-control(name='comment[content]', placeholder='Yorum')
+								button#btnAdd.btn.btn-default(type='submit') Ekle
+						-comments.forEach(function(comment) {
+							-if(comment.email=='admin'){
+								.well-admin
+									p.pull-right #{moment(comment.createddate).format("DD-MM-YYYY")}
+									p
+										b=comment.content
+									p=comment.email.split("@",1)
+							-}
+							-else{
+								.well
+									p.pull-right #{moment(comment.createddate).format("DD-MM-YYYY")}
+									p
+										b=comment.content
+									p=comment.email.split("@",1)
+							-}
+						-})

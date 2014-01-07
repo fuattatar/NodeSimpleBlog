@@ -14,11 +14,11 @@ html
 		script(src='/javascripts/analytics.js')
 	body
 		#wrap
-			.container
-				include header
-				block content
-				include blogfooter
 			
+			include header
+			block content
+			include blogfooter
+		
 			script(type='text/javascript', src='/javascripts/bootstrap.min.js' async)
 			block js
 			link(rel='stylesheet', href='/stylesheets/bloglayout.css')
