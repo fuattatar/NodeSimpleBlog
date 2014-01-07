@@ -23,3 +23,6 @@ ul:before{
 ul li a{
 	color:white !important;
 }
+.well{
+	padding:10px !important;
+}

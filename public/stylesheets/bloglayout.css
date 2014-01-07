@@ -19,9 +19,9 @@ body {
 
 /* Set the fixed height of the footer here */
 #footer {
-  height: 35px;
-  padding: 5px;
-  background-color: #046380;
+  height: 35px !important;
+  padding: 5px !important;
+  background-color: #046380 !important;
 }
 #footertext{
   color:#EFECCA;
