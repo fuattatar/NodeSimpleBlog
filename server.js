@@ -15,6 +15,8 @@ function authChecker(req, res, next) {
   }
 }
 
+
+
 ////Mongoose eklendi
 var express = require('express'),
 	mongoose= require('mongoose');
