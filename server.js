@@ -14,7 +14,7 @@ function authChecker(req, res, next) {
           });
   }
 }
-
+//
 
 
 ////Mongoose eklendi
